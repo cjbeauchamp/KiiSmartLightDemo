@@ -93,7 +93,6 @@ class GUI extends JFrame implements Constants, ActionListener
 					Object obj = parser.parse(fr);
 
 					JSONObject jsonObject = (JSONObject) obj;
-					System.out.println("Getting power status");
 					GUI.this.power = (boolean) jsonObject.get("power");
 
 					JSONArray color = (JSONArray) jsonObject.get("color");
