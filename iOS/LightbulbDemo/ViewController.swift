@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.getStates), name: "deviceUpdated", object: nil)
 
         do {
             try self.api = ThingIFAPI.loadWithStoredInstance()!
@@ -45,9 +47,12 @@ class ViewController: UIViewController {
     func updateUIValues(result:Dictionary<String, AnyObject>) {
         self.powerSwitch.on = result["power"] as! Bool
         self.brightnessSlider.value = result["brightness"] as! Float
-        self.redSlider.value = result["color"]![0] as! Float
-        self.greenSlider.value = result["color"]![1] as! Float
-        self.blueSlider.value = result["color"]![2] as! Float
+        
+        let color:NSArray = result["color"] as! NSArray
+        
+        self.redSlider.value = color[0] as! Float
+        self.greenSlider.value = color[1] as! Float
+        self.blueSlider.value = color[2] as! Float
         self.updateUI()
     }
     
@@ -62,6 +67,7 @@ class ViewController: UIViewController {
         if((self.api) != nil) {
             self.api!.getState() { (result: Dictionary<String, AnyObject>?, error: ThingIFError?) -> Void in
                 if error == nil {
+                    print(result)
                     self.updateUIValues(result!)
                 } else {
                     print(error)
