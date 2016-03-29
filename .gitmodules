@@ -1,0 +1,3 @@
+[submodule "thing-if-ThingSDK"]
+	path = thing-if-ThingSDK
+	url = https://github.com/KiiPlatform/thing-if-ThingSDK.git
