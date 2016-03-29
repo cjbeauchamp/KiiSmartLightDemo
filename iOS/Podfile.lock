@@ -1,0 +1,13 @@
+PODS:
+  - KiiCloud (2.4.2)
+  - ThingIFSDK (0.10.0)
+
+DEPENDENCIES:
+  - KiiCloud (= 2.4.2)
+  - ThingIFSDK (= 0.10.0)
+
+SPEC CHECKSUMS:
+  KiiCloud: b21599f9dfe53f12756f77e2439f19057ec432dd
+  ThingIFSDK: bf798ff0caf087ba7c4702148351c0c957fa1604
+
+COCOAPODS: 0.39.0

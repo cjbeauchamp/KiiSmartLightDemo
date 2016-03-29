@@ -1,0 +1,6 @@
+framework module Pods_LightbulbDemo {
+  umbrella header "Pods-LightbulbDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
