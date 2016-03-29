@@ -90,7 +90,6 @@ static kii_bool_t prv_set_smartlight_info(const prv_smartlight_t* smartlight)
     if (pthread_mutex_unlock(&m_mutex) != 0) {
         return KII_FALSE;
     }
-    printf("setting info");
     write_state();
     return KII_TRUE;
 }
@@ -105,7 +104,7 @@ static kii_bool_t action_handler(
         char error[EMESSAGE_SIZE + 1])
 {
     prv_smartlight_t smartlight;
-     printf("Hello World");
+
     printf("schema=%s, schema_version=%d, action name=%s, action params=%s\n",
             schema, schema_version, action_name, action_params);
 
